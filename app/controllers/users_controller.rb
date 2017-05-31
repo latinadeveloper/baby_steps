@@ -22,7 +22,8 @@ class UsersController < ApplicationController
       :password,
       :password_confirmation,
         child_attributes: [
-        :child_name, :age
+        :child_name,
+        :age
         ]
         )
     end

@@ -24,7 +24,7 @@
   <%= form.text_field :password_confirmation %>
   <br>
   <h2>Child info</h2>
-    <%= form.fields_for :child do |c| %>
+    <%= form.fields_for :child_attributes do |c| %>
       <%= c.label :child_name %>
       <%= c.text_field :child_name %><br>
       <%= c.label :age %>
