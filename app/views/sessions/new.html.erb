@@ -1,0 +1,15 @@
+<div>
+  <h1> Sign In </h1>
+  <%= form_with model: User.new, local: true, url: signin_path do |form| %>
+
+    <%= form.label :name, "Username" %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+    <br>
+
+    <%= form.submit %>
+
+  <% end %>
+</div>
