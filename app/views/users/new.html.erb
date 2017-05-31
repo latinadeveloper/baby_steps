@@ -13,6 +13,7 @@
     </div>
   <% end %>
 
+  <h2>Parent info</h2>
   <%= form.label :name, "Username" %>
   <%= form.text_field :name %>
   <br>
@@ -22,6 +23,9 @@
   <%= form.label :password_confirmation %>
   <%= form.text_field :password_confirmation %>
   <br>
+    <% end %>
+
+
   <%= form.submit %>
 
 <% end %>
