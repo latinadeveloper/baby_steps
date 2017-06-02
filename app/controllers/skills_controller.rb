@@ -5,10 +5,8 @@ class SkillsController < ApplicationController
 
 
     @skills.each do |activity|
-      @child.child_skills.new(skill: activity) 
+      @child.child_skills.new(skill: activity)
     end
 
   end
-
-
 end
