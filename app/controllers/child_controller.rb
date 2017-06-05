@@ -8,7 +8,7 @@ class ChildController < ApplicationController
   private
   def child_params
     params.require(:child).permit(
-      child_skills_attributes: [
+      accomplishments_attributes: [
       # :skill_id,
       # :perform
       :comment

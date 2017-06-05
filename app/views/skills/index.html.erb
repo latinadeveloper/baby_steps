@@ -1,7 +1,7 @@
 <div>
   <h1> Skills </h1>
   <%= form_with model: @child, local:true do |form| %>
-    <%= form.fields_for :child_skills do |fields| %>
+    <%= form.fields_for :accomplishments do |fields| %>
       <%= fields.hidden_field :skill_id %>
       <%= fields.object.skill.title %>
       <%= fields.text_field :comment%> <br>

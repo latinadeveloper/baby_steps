@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170531025640) do
 
-  create_table "child_skills", force: :cascade do |t|
+  create_table "accomplishments", force: :cascade do |t|
     t.integer "child_id"
     t.integer "skill_id"
     t.boolean "perform"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["child_id"], name: "index_child_skills_on_child_id"
-    t.index ["skill_id"], name: "index_child_skills_on_skill_id"
+    t.index ["child_id"], name: "index_accomplishments_on_child_id"
+    t.index ["skill_id"], name: "index_accomplishments_on_skill_id"
   end
 
   create_table "children", force: :cascade do |t|

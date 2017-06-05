@@ -1,4 +1,4 @@
 class Skill < ApplicationRecord
-  has_many :child_skills
+  has_many :accomplishments
 
 end

@@ -1,6 +1,6 @@
-class CreateChildSkills < ActiveRecord::Migration[5.1]
+class CreateAccomplishments < ActiveRecord::Migration[5.1]
   def change
-    create_table :child_skills do |t|
+    create_table :accomplishments do |t|
       t.belongs_to :child
       t.belongs_to :skill
       t.boolean :perform
