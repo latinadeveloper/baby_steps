@@ -5,7 +5,9 @@ class SkillsController < ApplicationController
 
 
     @skills.each do |activity|
-      @child.accomplishments.new(skill: activity)
+      unless @child.accomplishments.exists?(skill_id: activity.id)
+        @child.accomplishments.new(skill: activity)
+      end
     end
 
   end

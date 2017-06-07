@@ -2,6 +2,7 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find_by(id: params[:id])
     @child.update(child_params)
+    redirect_to child_skills_path(@child)
   end
 
 
@@ -9,7 +10,9 @@ class ChildrenController < ApplicationController
   def child_params
     params.require(:child).permit(
       accomplishments_attributes: [
-      # :skill_id,
+      :id,
+      :skill_id,
+
       # :perform
       :comment
       ]
