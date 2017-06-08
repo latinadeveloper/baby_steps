@@ -1,9 +1,8 @@
 class SkillsController < ApplicationController
+  before_action :set_child
+
   def index
     @skills = Skill.all
-    @child = Child.find_by(id: params[:child_id])
-
-
     @skills.each do |activity|
       unless @child.accomplishments.exists?(skill_id: activity.id)
         @child.accomplishments.new(skill: activity)
