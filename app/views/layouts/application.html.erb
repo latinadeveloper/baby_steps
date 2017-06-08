@@ -17,12 +17,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Baby Steps</a>
+
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Home", root_path %></li>
+          <a class="navbar-brand" href="#">Baby Steps</a>
           <% if current_user  %>
+          <li><%= link_to "Home", home_path %></li>
             <li><%= link_to "Sign out", signout_path, method: :delete%></li>
           <% else %>
             <li><%= link_to "Sign up", new_user_path %></li>

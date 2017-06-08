@@ -4,4 +4,9 @@ module ApplicationHelper
       User.find_by(id: session[:user_id])
     end
   end
+
+  def home_path
+    child_skills_path(current_user.child)
+  end
+
 end

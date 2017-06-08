@@ -10,8 +10,7 @@ class SessionsController < ApplicationController
     if @verify
       session[:user_id] = @user.id
       flash[:notice] = "Welcome, you've logged in."
-      redirect_to root_path
-      # redirect_to user_path(@user)
+      redirect_to home_path
     else
       flash[:error] = "Wrong username or password."
       redirect_to signin_path
