@@ -1,12 +1,19 @@
+
+<div>
+
+  <%= link_to "Add New Achievement", new_child_skill_path %>
+
+</div>
+
 <div>
   <h1> Skills </h1>
+
   <%= form_with model: @child, local:true do |form| %>
     <%= form.fields_for :accomplishments do |fields| %>
       <%= fields.hidden_field :skill_id %>
       <%= fields.object.skill.title %>
       <%= fields.text_field :comment%> <br>
     <% end %>
-
 
   <%= form.submit %>
   <% end %>

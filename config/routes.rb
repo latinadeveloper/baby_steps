@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#destroy'
 
-  resources :children do
-    resources :skills, only: [:index]
+
+  resources :children, only:[:show, :update] do
+    resources :skills, only: [:index, :new]
   end
 
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
