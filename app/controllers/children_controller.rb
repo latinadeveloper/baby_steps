@@ -1,5 +1,8 @@
 class ChildrenController < ApplicationController
   before_action :set_child
+  def show
+    @skills = @child.skills
+  end
 
   def update
     @child.update(child_params)
@@ -17,5 +20,12 @@ class ChildrenController < ApplicationController
       :comment
       ]
       )
+  end
+
+  def set_child
+    @child = Child.find_by(id: params[:id])
+    if @child && @child.user != current_user
+      redirect_to root_path
+    end
   end
 end

@@ -8,6 +8,13 @@ class SkillsController < ApplicationController
         @child.accomplishments.new(skill: activity)
       end
     end
+  end
 
+  private
+  def set_child
+    @child = Child.find_by(id: params[:child_id])
+    if @child && @child.user != current_user
+      redirect_to root_path
+    end
   end
 end
