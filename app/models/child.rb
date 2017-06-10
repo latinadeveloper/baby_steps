@@ -1,6 +1,8 @@
 class Child < ApplicationRecord
   belongs_to :user
   has_many :accomplishments
+  has_many :skills, through: :accomplishments
+
   accepts_nested_attributes_for :accomplishments,
     reject_if: :all_blank
 

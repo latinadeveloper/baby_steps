@@ -1,7 +1,7 @@
 
 <div>
 
-  <%= link_to "Add New Achievement", new_child_skill_path %>
+  <%= link_to "Add New Skill", new_child_skill_path, class: 'btn btn-info' %>
 
 </div>
 
@@ -15,6 +15,6 @@
       <%= fields.text_field :comment%> <br>
     <% end %>
 
-  <%= form.submit %>
+  <%= form.submit 'Update Skills', class: 'btn btn-primary' %>
   <% end %>
 </div>

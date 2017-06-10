@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   resources :children, only:[:show, :update] do
-    resources :skills, only: [:index, :new]
+    resources :skills, only: [:index, :new, :create]
   end
 
 
