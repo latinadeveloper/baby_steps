@@ -1,12 +1,14 @@
+<%= link_to "Add New Skill", child_skills_path(@child), class: 'btn btn-info' %>
 <div>
   <h1> Child Profile </h1>
   <h4> Skills child has</h4>
   <% @skills.each do |skill| %>
-    <%= skill.title %>
+    <%= skill.title %> <br>
   <% end %>
 
   <div>
-  <h4> Last 3 skills learned </h4>
+    <%= link_to "Latest 5 skills learned ", recent_skills_child_path, class: 'btn btn-info' %>
+
   </div>
 
 </div>

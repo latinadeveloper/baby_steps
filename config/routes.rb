@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :children, only:[:show, :update] do
+    member do
+      get :recent_skills
+    end
     resources :skills, only: [:index, :new, :create]
   end
 
