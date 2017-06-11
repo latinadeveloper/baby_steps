@@ -1,4 +1,5 @@
 <div>
+  <%= link_to("login with facebook!", "/auth/facebook") %>
   <h1> Sign In </h1>
   <%= form_with model: User.new, local: true, url: signin_path do |form| %>
 
