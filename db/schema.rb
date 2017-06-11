@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531025640) do
+ActiveRecord::Schema.define(version: 20170611032437) do
 
   create_table "accomplishments", force: :cascade do |t|
     t.integer "child_id"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20170531025640) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
