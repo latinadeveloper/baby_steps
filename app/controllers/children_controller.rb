@@ -2,7 +2,7 @@ class ChildrenController < ApplicationController
   before_action :set_child
 
   def index
-    @children = Child.all
+    @children = current_user.children
   end
 
   def new
@@ -12,7 +12,7 @@ class ChildrenController < ApplicationController
   def show
     @skills = @child.skills
   end
-    
+
 
   def update
     @child.update(child_params)
