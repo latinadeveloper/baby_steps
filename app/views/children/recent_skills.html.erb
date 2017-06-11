@@ -1,0 +1,9 @@
+<%= link_to "Child Profile", child_path(@child), class: 'btn btn-info' %>
+
+<div>
+  <h1> Skills </h1>
+  <% @top_skills.each do |accomplishment| %>
+    <%= accomplishment.skill.title %>
+  <% end %>
+
+</div>
