@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.child = Child.new
+    @user.children << Child.new
   end
 
   def create

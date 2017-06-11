@@ -8,10 +8,11 @@ class ChildrenController < ApplicationController
   def new
     @child = Child.new
   end
-  
+
   def show
     @skills = @child.skills
   end
+    
 
   def update
     @child.update(child_params)
