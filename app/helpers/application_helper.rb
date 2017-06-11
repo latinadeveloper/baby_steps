@@ -6,7 +6,8 @@ module ApplicationHelper
   end
 
   def home_path
-    child_skills_path(current_user.child)
+    # child_skills_path(current_user.child)
+    root_path
   end
 
 end
