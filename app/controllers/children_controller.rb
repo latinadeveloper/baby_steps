@@ -1,5 +1,14 @@
 class ChildrenController < ApplicationController
   before_action :set_child
+
+  def index
+    @children = Child.all
+  end
+
+  def new
+    @child = Child.new
+  end
+  
   def show
     @skills = @child.skills
   end

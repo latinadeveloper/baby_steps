@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
 
 
-  resources :children, only:[:show, :update] do
+  resources :children do
     resources :skills, only: [:index, :new, :create] do
       collection do
         get :recent
