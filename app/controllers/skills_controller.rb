@@ -28,6 +28,12 @@ class SkillsController < ApplicationController
     end
   end
 
+
+  def recent
+    @accomplishments = @child.accomplishments
+    @top_skills = @accomplishments.recent_skills
+  end
+
   private
   def set_child
     @child = Child.find_by(id: params[:child_id])
