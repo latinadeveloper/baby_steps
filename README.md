@@ -1,4 +1,4 @@
-# ![Baby_Steps](https://github.com/latinadeveloper/baby_steps/imagesimages/demo_landing_1.jpg?raw=true "Optional Title")
+#![Baby_Steps](images/demo_landing_1.jpg?raw=true "Optional Title")
 # Baby_Steps
 <table>
 <tr>
@@ -9,9 +9,9 @@
 </table>
 
 ## Signing In
-![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_3.jpg)
+![](https://github.com/latinadeveloper/baby_steps/app/assets/images/demo/demo3.jpg)
 ## Multiple Children
-![](https://github.com/latinadeveloper/baby_steps/images/demo/demo4.jpg)
+![](https://github.com/latinadeveloper/baby_steps/app/assets/images/demo/demo4.jpg)
 
 ## Installing
 
