@@ -1,4 +1,4 @@
-![Baby_Steps](app/assets/images/babystepsback.jpg?raw=true "Optional Title")
+![Baby_Steps](app/assets/images/babystepsback.jpg?raw=true "baby")
 # Baby_Steps
 <table>
 <tr>
@@ -8,22 +8,22 @@
 </tr>
 </table>
 
-## Signing In
-![](https://github.com/latinadeveloper/baby_steps/app/assets/images/demo/demo3.png)
-## Multiple Children
-![](https://github.com/latinadeveloper/baby_steps/app/assets/images/demo/demo4.png)
+### Signing In
+![](app/assets/images/demo/demo3.png)
+### Multiple Children
+![](app/assets/images/demo/demo4.png)
 
-## Installing
+### Installing
 
 Clone or Download Baby_Steps
 
-Go to the corresponding directory
+Go to the corresponding directory, Example code:
 
 ```
 cd downloads/baby_steps-master
 ```
 
-Now run bundle install
+Now type bundle install in your terminal
 
 ```
 bundle install
@@ -33,9 +33,9 @@ IMPORTANT, If you want to use the facebook login. Follow the steps below. Do the
 
 A Facebook App Id and App Secret will be needed. Got to Facebook for Developers(https://developers.facebook.com/) to do the following
 
-1- Set Up the App on Facebook
-2-Log in, then you will see the option to Add a New App under My Apps.
-3- Get the APP ID and APP SECRET
+- Set Up the App on Facebook
+- Log in, then you will see the option to Add a New App under My Apps.
+- Get the APP ID and APP SECRET
 
 Type in the Display name for the app. Example  Baby Steps.
 Go to the dashboard to look for the two things we need.
@@ -44,7 +44,7 @@ APP ID and APP SECRET.
 Please note to keep these two keys in a separate file. Do not commit.
 Now that you have the two numbers.
 
-4- Go to your terminal. These two numbers will be exported using the terminal. Put in your corresponding keys instead of the Xs.
+- Go to your terminal. These two numbers will be exported using the terminal. Put in your corresponding keys instead of the Xs.
 
 ```
 FACEBOOK_APP_ID: "xxxxxxxxx"
@@ -53,7 +53,7 @@ FACEBOOK_APP_SECRET: "xxxxxxxx"
 Please Note:
 The Rails Server needs to be run on the same terminal window where you exported the keys.
 
-Set Up the Database
+### Set Up the Database
 
 In the terminal
 
@@ -63,7 +63,7 @@ If you have Rails 5.1.1  command
 `rails db:setup ``
 will also work
 
-Run Rails Server
+### Run Rails Server
 `rails s`
 
 Open App
@@ -71,8 +71,6 @@ Opening app in browser
 Open url http://localhost:3000 in your browser.
 
 This is the default server for most, but if you have issues check the link given after you run rails s.
-
-
 
 ### Bug / Feature Request
 
