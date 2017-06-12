@@ -13,6 +13,16 @@ class ChildrenController < ApplicationController
     @skills = @child.skills
   end
 
+  def create
+    @child = current_user.children.new(child_params)
+    if @child.save
+      redirect_to children_path
+    else
+      render 'new'
+    end
+  end
+
+
 
   def update
     @child.update(child_params)
@@ -22,6 +32,8 @@ class ChildrenController < ApplicationController
   private
   def child_params
     params.require(:child).permit(
+      :child_name,
+      :age,
       accomplishments_attributes: [
       :id,
       :skill_id,

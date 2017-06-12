@@ -8,7 +8,8 @@
 </div>
 
 <div>
-  <h1> Skills </h1>
+  <h1> Skills for <%= @child.child_name %> </h1>
+
 
   <%= form_with model: @child, local:true do |form| %>
     <%= form.fields_for :accomplishments do |fields| %>
