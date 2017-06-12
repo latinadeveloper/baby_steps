@@ -8,31 +8,75 @@
 </tr>
 </table>
 
-## Demo
-Here is a working live demo :  https://iharsh234.github.io/WebApp/
+<!-- ## Demo
+Here is a working live demo: (https://babystepslist.herokuapp.com/) -->
 
-### Signing Up
+## Signing Up
 ![](https://github.com/latinadeveloper/baby_steps/images/demo/)
-### Child Skills
+## Child Skills
 ![](https://github.com/latinadeveloper/baby_steps/images/demo/)
-### Multiple Children
+## Multiple Children
 ![](https://github.com/latinadeveloper/baby_steps/images/demo/)
 
-### Installing
+## Installing
 
-A step by step series of examples that tell you have to get a development env running
+Clone or Download Baby_Steps
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Go to the corresponding directory
 
 ```
-until finished
+cd downloads/baby_steps-master
 ```
+
+Now run bundle install
+
+```
+bundle install
+```
+
+IMPORTANT, If you want to use the facebook login. Follow the steps below. Do these steps before proceeding to get facebook log in to work. If you don't want the facebook login to work got to the Set Up the Database section.
+
+A Facebook App Id and App Secret will be needed. Got to Facebook for Developers(https://developers.facebook.com/) to do the following
+
+1- Set Up the App on Facebook
+2-Log in, then you will see the option to Add a New App under My Apps.
+3- Get the APP ID and APP SECRET
+
+Type in the Display name for the app. Example  Baby Steps.
+Go to the dashboard to look for the two things we need.
+APP ID and APP SECRET.
+
+Please note to keep these two keys in a separate file. Do not commit.
+Now that you have the two numbers.
+
+4- Go to your terminal. These two numbers will be exported using the terminal. Put in your corresponding keys instead of the Xs.
+
+```
+FACEBOOK_APP_ID: "xxxxxxxxx"
+FACEBOOK_APP_SECRET: "xxxxxxxx"
+```
+Please Note:
+The Rails Server needs to be run on the same terminal window where you exported the keys.
+
+Set Up the Database
+
+In the terminal
+
+`rake db:setup`
+
+If you have Rails 5.1.1  command
+`rails db:setup ``
+will also work
+
+Run Rails Server
+`rails s`
+
+Open App
+Opening app in browser
+Open url http://localhost:3000 in your browser.
+
+This is the default server for most, but if you have issues check the link given after you run rails s.
+
 
 
 ### Bug / Feature Request
