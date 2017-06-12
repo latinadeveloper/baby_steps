@@ -32,7 +32,6 @@ class ChildrenController < ApplicationController
      redirect_to children_path, notice: 'Child was deleted.'
   end
 
-
   private
   def child_params
     params.require(:child).permit(
@@ -41,8 +40,7 @@ class ChildrenController < ApplicationController
       accomplishments_attributes: [
       :id,
       :skill_id,
-
-      # :perform
+      :perform,
       :comment
       ]
       )
