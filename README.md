@@ -1,4 +1,4 @@
-# ![Baby_Steps](https://github.com/latinadeveloper/baby_steps/images/demo/demo_landing.JPG)
+# ![Baby_Steps](https://github.com/latinadeveloper/baby_steps/imagesimages/demo_landing_1.jpg?raw=true "Optional Title")
 # Baby_Steps
 <table>
 <tr>
@@ -8,15 +8,10 @@
 </tr>
 </table>
 
-<!-- ## Demo
-Here is a working live demo: (https://babystepslist.herokuapp.com/) -->
-
-## Signing Up
-![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_landing_1.png)
-## Signing with facebook
-![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_3.png)
+## Signing In
+![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_3.jpg)
 ## Multiple Children
-![](https://github.com/latinadeveloper/baby_steps/images/demo/demo4.png)
+![](https://github.com/latinadeveloper/baby_steps/images/demo/demo4.jpg)
 
 ## Installing
 
