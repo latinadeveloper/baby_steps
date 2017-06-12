@@ -12,11 +12,11 @@
 Here is a working live demo: (https://babystepslist.herokuapp.com/) -->
 
 ## Signing Up
-![](https://github.com/latinadeveloper/baby_steps/images/demo/)
-## Child Skills
-![](https://github.com/latinadeveloper/baby_steps/images/demo/)
+![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_landing_1.png)
+## Signing with facebook
+![](https://github.com/latinadeveloper/baby_steps/images/demo/demo_3.png)
 ## Multiple Children
-![](https://github.com/latinadeveloper/baby_steps/images/demo/)
+![](https://github.com/latinadeveloper/baby_steps/images/demo/demo4.png)
 
 ## Installing
 
