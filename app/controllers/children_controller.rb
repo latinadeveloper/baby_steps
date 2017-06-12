@@ -22,12 +22,16 @@ class ChildrenController < ApplicationController
     end
   end
 
-
-
   def update
     @child.update(child_params)
     redirect_to child_skills_path(@child)
   end
+
+  def destroy
+    @child.destroy
+     redirect_to children_path, notice: 'Child was deleted.'
+  end
+
 
   private
   def child_params
