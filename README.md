@@ -1,4 +1,4 @@
-![Baby_Steps](app/assets/images/babystepsback.jpg?raw=true "baby")
+![Baby_Steps](app/assets/images/demolanding1.png?raw=true "baby")
 # Baby_Steps
 <table>
 <tr>
@@ -47,8 +47,8 @@ Now that you have the two numbers.
 - Go to your terminal. These two numbers will be exported using the terminal. Put in your corresponding keys instead of the Xs.
 
 ```
-FACEBOOK_APP_ID: "xxxxxxxxx"
-FACEBOOK_APP_SECRET: "xxxxxxxx"
+FACEBOOK_APP_ID=xxxxxxxxx
+FACEBOOK_APP_SECRET=xxxxxxxx
 ```
 Please Note:
 The Rails Server needs to be run on the same terminal window where you exported the keys.
