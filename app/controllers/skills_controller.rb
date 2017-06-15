@@ -43,6 +43,6 @@ class SkillsController < ApplicationController
   end
 
   def accomplishment_params
-    params.require(:accomplishment).permit(:skill_id, :comment)
+    params.require(:accomplishment).permit(:skill_id, :comment, :perform)#attribute wasnot permitted
   end
 end
