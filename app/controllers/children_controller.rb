@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-  before_action :set_child
+  before_action :set_child, only: [:edit, :update, :delete, :show, :destroy ]###
 
   def index
     @children = current_user.children
