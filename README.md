@@ -1,4 +1,4 @@
-![Baby_Steps](app/assets/images/demolanding1.png?raw=true "baby")
+![Baby_Steps](app/assets/images/demo/demo_landing_1.jpg?raw=true "baby")
 # Baby_Steps
 <table>
 <tr>
