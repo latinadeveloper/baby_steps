@@ -28,6 +28,9 @@ class SkillsController < ApplicationController
     end
   end
 
+  def current    
+     render json: @child.skills    
+  end
 
   def recent
     @accomplishments = @child.accomplishments
