@@ -28,6 +28,12 @@ class SkillsController < ApplicationController
     end
   end
 
+  #showing one accomplistment at a time
+  def show
+    accomplishment = @child.accomplishments.find_or_initialize_by(skill_id: params[:id])
+    render json: accomplishment
+  end
+
   def current    
      render json: @child.skills    
   end
