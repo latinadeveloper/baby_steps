@@ -12,6 +12,9 @@ function attachListeners(){
         $.getJSON(window.location.pathname +'/skills/recent').done(recentSkills)             
     });
 
+
+   $.getJSON("1").done()  
+
 }
 
 
@@ -23,5 +26,5 @@ function currentSkills(skillResponse){
 function recentSkills(skillResponse){
     var skillData = "<h3>Recent Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");  
     $("#recent5Skills").html(skillData)
-
 }
+
