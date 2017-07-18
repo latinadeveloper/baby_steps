@@ -34,7 +34,13 @@ class SkillsController < ApplicationController
 
   def recent
     @accomplishments = @child.accomplishments
-    @top_skills = @accomplishments.recent_skills
+    @recent_accomplishments = @accomplishments.recent_skills
+    skills =  @recent_accomplishments.collect do |accomplishment|
+        accomplishment.skill
+      end
+      logger.info @accomplishments.inspect
+    render json: skills
+                   
   end
 
   private
