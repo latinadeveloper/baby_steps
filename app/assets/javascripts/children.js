@@ -21,10 +21,7 @@ function attachListeners(){
 
     $("#accomplishment_comment").on("blur", formValues);
 
-    function formValues(){
-        var values = $(this.parentElement).serialize();
-        var posting = $.post('.', values);
-    }
+  
     //request for accomplishment 
    $.getJSON("1").done(accomplishmentResponse)  
 
