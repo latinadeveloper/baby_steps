@@ -5,8 +5,10 @@
   <%= form_for @accomplishment, url: child_skills_path(@child) do |f| %>
     <h2 id="explore-skills"> title</h2>
     <%= f.hidden_field :skill_id %>
-    <%= f.check_box :perform %>
+    <%= f.check_box :perform %> <br>
     <%= f.text_field :comment %> <br>
+
     <%= f.submit 'Add Skill', class: 'btn btn-primary' %>
   <% end %>
+  
 </div>

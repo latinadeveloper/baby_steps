@@ -12,8 +12,8 @@ function attachListeners(){
         $.getJSON(window.location.pathname +'/skills/recent').done(recentSkills)             
     });
 
-
-   $.getJSON("1").done()  
+    //request for accomplishment 
+   $.getJSON("1").done(accomplishmentResponse)  
 
 }
 
@@ -26,5 +26,18 @@ function currentSkills(skillResponse){
 function recentSkills(skillResponse){
     var skillData = "<h3>Recent Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");  
     $("#recent5Skills").html(skillData)
+}
+
+function accomplishmentResponse(response){
+    $("#explore-skills").text(response.skill.title)
+
+    if (response.perform == true)
+        $('#accomplishment_perform').attr('checked', true);
+    else
+        $('#accomplishment_perform').attr('checked', false);
+
+    $("#accomplishment_comment").val(response.comment)
+
+    
 }
 
