@@ -12,6 +12,19 @@ function attachListeners(){
         $.getJSON(window.location.pathname +'/skills/recent').done(recentSkills)             
     });
 
+    function formValues(){
+        var values = $(this.parentElement).serialize();
+        var posting = $.post('.', values);
+    }
+
+    $("#accomplishment_perform").on("change", formValues);
+
+    $("#accomplishment_comment").on("blur", formValues);
+
+    function formValues(){
+        var values = $(this.parentElement).serialize();
+        var posting = $.post('.', values);
+    }
     //request for accomplishment 
    $.getJSON("1").done(accomplishmentResponse)  
 
@@ -28,7 +41,7 @@ function recentSkills(skillResponse){
     $("#recent5Skills").html(skillData)
 }
 
-function accomplishmentResponse(response){
+function accomplishmentResponse(response){ // loads current data
     $("#explore-skills").text(response.skill.title)
 
     if (response.perform == true)
@@ -38,6 +51,16 @@ function accomplishmentResponse(response){
 
     $("#accomplishment_comment").val(response.comment)
 
-    
-}
+    $("#accomplishment_skill_id").val(response.skill.id)
 
+}
+//   $(function () {
+//     $('form').submit(function(event) {
+//       event.preventDefault();
+
+//         var values = $(this.parentElement).serialize();
+    
+//         var posting = $.post(window.location.pathname , values);
+
+//     });
+//   });
