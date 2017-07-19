@@ -15,15 +15,15 @@ class SkillsController < ApplicationController
   end
 
   def create #adding a new accomplishment
-    if @accomplishment = Accomplishment.find_by({ child_id: params[:child_id], skill_id: params[:accomplishment][:skill_id] })
-      @accomplishment.update(accomplishment_params)
-      redirect_to child_skills_path(@child)
+    if accomplishment = Accomplishment.find_by({ child_id: params[:child_id], skill_id: params[:accomplishment][:skill_id] })
+      accomplishment.update(accomplishment_params)
+      render json: accomplishment
     else
-      @accomplishment = @child.accomplishments.new(accomplishment_params)
-      if @accomplishment.save
-        redirect_to child_skills_path(@child)
+      accomplishment = @child.accomplishments.new(accomplishment_params)
+      if accomplishment.save
+        render json: accomplishment
       else
-        render 'new'
+        render json: 'error - to do'
       end
     end
   end
