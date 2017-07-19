@@ -21,7 +21,14 @@ function attachListeners(){
 
     $("#accomplishment_comment").on("blur", formValues);
 
-  
+    $("#right-button").on("click", function(){
+        var skill_id = parseInt($("#accomplishment_skill_id").val()) + 1
+        $.getJSON(skill_id).done(accomplishmentResponse)
+    })
+    $("#left-button").on("click", function(){
+        var skill_id = parseInt($("#accomplishment_skill_id").val()) - 1
+        $.getJSON(skill_id).done(accomplishmentResponse)
+    })
     //request for accomplishment 
    $.getJSON("1").done(accomplishmentResponse)  
 
