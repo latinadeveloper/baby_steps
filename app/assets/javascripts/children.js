@@ -15,7 +15,21 @@ function attachListeners(){
     function formValues(){
         var values = $(this.parentElement).serialize();
         var posting = $.post('.', values);
+        var changed_element = this
+
+        posting.done((response)=>{
+            if (this.type == "checkbox" )
+            $("#form-flash").text(response.perform + " is now saved")
+            else
+            $("#form-flash").text(response.comment + " is now saved")
+        })
+
     }
+
+    //prevents form from submitting on enter
+    $('#new_accomplishment').submit(function(event) {
+       event.preventDefault();
+    });
 
     $("#accomplishment_perform").on("change", formValues);
 
@@ -49,9 +63,9 @@ function accomplishmentResponse(response){ // loads current data
     $("#explore-skills").text(response.skill.title)
 
     if (response.perform == true)
-        $('#accomplishment_perform').attr('checked', true);
+        $('#accomplishment_perform').prop('checked', true);
     else
-        $('#accomplishment_perform').attr('checked', false);
+        $('#accomplishment_perform').prop('checked', false);
 
     $("#accomplishment_comment").val(response.comment)
 
