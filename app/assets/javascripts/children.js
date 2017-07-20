@@ -54,10 +54,6 @@ function currentSkills(skillResponse){
     $("#currentSkillsData").html(skillData)
 }
 
-function recentSkills(skillResponse){
-    var skillData = "<h3>Recent Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");  
-    $("#recent5Skills").html(skillData)
-}
 
 function accomplishmentResponse(response){ // loads current data
     $("#explore-skills").text(response.skill.title)
@@ -72,6 +68,16 @@ function accomplishmentResponse(response){ // loads current data
     $("#accomplishment_skill_id").val(response.skill.id)
 
 }
+
+
+
+
+
+function recentSkills(skillResponse){ //skillReaponse <- array of objects
+    var skillData = "<h3>Recent Skills</h3>" + skillResponse.map(data => `<br>${data.skill.title}`).join("");  
+    $("#recent5Skills").html(skillData)
+}
+
 //   $(function () {
 //     $('form').submit(function(event) {
 //       event.preventDefault();
