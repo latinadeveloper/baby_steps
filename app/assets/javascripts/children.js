@@ -69,14 +69,24 @@ function accomplishmentResponse(response){ // loads current data
 
 }
 
+class Accomplishment {
+  constructor(title, comment) {
+    this.title = title;
+    this.comment = comment;
+  }
 
+  displayRecentSkill(){
+    return this.title + "-- Comment: --" + this.comment
+  }
+}
 
-
-
-function recentSkills(skillResponse){ //skillReaponse <- array of objects
-    var skillData = "<h3>Recent Skills</h3>" + skillResponse.map(data => `<br>${data.skill.title}`).join("");  
+function recentSkills(skillResponse){ //skillReaponse <- array of objects    
+    var accomplishments = skillResponse.map(data => new Accomplishment(data.skill.title, data.comment))
+    var skillData = "<h3>Recent Skills</h3>" + accomplishments.map(acc => `<br>${acc.displayRecentSkill()}`).join("");  
+    
     $("#recent5Skills").html(skillData)
 }
+
 
 //   $(function () {
 //     $('form').submit(function(event) {
