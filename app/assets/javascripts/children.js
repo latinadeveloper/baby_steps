@@ -22,16 +22,14 @@ function attachListeners(){
                 var flash_text = response.perform ? 'mastered skill' : 'still working on skill'
                 $("#form-flash").text(flash_text)
             }
-            
             else
             $("#form-flash").text(response.comment + " is now saved")
         })
-
     }
 
-    $("#accomplishment_perform").on("change", formValues);
+    $("#accomplishment_perform").on("change", formValues);//the checkbox
 
-    $("#accomplishment_comment").on("blur", formValues);
+    $("#accomplishment_comment").on("blur", formValues);//the comment
 
      //prevents form from submitting on enter
     $('#new_accomplishment').submit(function(event) {
@@ -72,16 +70,26 @@ function accomplishmentResponse(response){ // loads current data
 
 }
 
-class Accomplishment {
-  constructor(title, comment) {
+//ES5 class
+function Accomplishment(title, comment){
     this.title = title;
     this.comment = comment;
-  }
-
-  displayRecentSkill(){
-    return this.title + "-- Comment: --" + this.comment
-  }
 }
+Accomplishment.prototype.displayRecentSkill = function() {
+     return this.title + "-- Comment: --" + this.comment
+}
+
+//ES 6 class
+// class Accomplishment {
+//   constructor(title, comment) {
+//     this.title = title;
+//     this.comment = comment;
+//   }
+
+//   displayRecentSkill(){
+//     return this.title + "-- Comment: --" + this.comment
+//   }
+// }
 
 function recentSkills(skillResponse){ //skillReaponse <- array of objects    
     var accomplishments = skillResponse.map(data => new Accomplishment(data.skill.title, data.comment))
@@ -89,15 +97,3 @@ function recentSkills(skillResponse){ //skillReaponse <- array of objects
     
     $("#recent5Skills").html(skillData)
 }
-
-
-//   $(function () {
-//     $('form').submit(function(event) {
-//       event.preventDefault();
-
-//         var values = $(this.parentElement).serialize();
-    
-//         var posting = $.post(window.location.pathname , values);
-
-//     });
-//   });
