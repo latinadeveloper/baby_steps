@@ -13,9 +13,8 @@ function attachListeners(){
     });
 
     function formValues(){
-        var values = $(this.parentElement).serialize();
+        var values = $("#new_accomplishment").serialize();
         var posting = $.post('.', values);
-        var changed_element = this
 
         posting.done((response)=>{
             if (this.type == "checkbox" ){
@@ -36,6 +35,7 @@ function attachListeners(){
        event.preventDefault();
     });
 
+    // Next and Back
     $("#right-button").on("click", function(){
         var skill_id = parseInt($("#accomplishment_skill_id").val()) + 1
         $.getJSON(skill_id).done(accomplishmentResponse)
@@ -44,10 +44,10 @@ function attachListeners(){
         var skill_id = parseInt($("#accomplishment_skill_id").val()) - 1
         $.getJSON(skill_id).done(accomplishmentResponse)
     })
-    //request for accomplishment 
-   $.getJSON("1").done(accomplishmentResponse)  
+    //request for accomplishment with getJSON
+    $.getJSON("1").done(accomplishmentResponse)
 
-}
+} // end listeners
 
 
 function currentSkills(skillResponse){

@@ -38,11 +38,22 @@ class SkillsController < ApplicationController
      render json: @child.skills    
   end
 
+  # def recent
+  #   @accomplishments = @child.accomplishments
+  #   @recent_accomplishments = @accomplishments.recent_skills
+
+  #   render json: @recent_accomplishments               
+  # end
+
   def recent
     @accomplishments = @child.accomplishments
     @recent_accomplishments = @accomplishments.recent_skills
 
-    render json: @recent_accomplishments               
+    respond_to do |format|
+      format.html
+      format.json {render json: @recent_accomplishments  }
+    end
+                 
   end
 
   private
