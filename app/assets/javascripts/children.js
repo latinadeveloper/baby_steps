@@ -18,22 +18,25 @@ function attachListeners(){
         var changed_element = this
 
         posting.done((response)=>{
-            if (this.type == "checkbox" )
-            $("#form-flash").text(response.perform + " is now saved")
+            if (this.type == "checkbox" ){
+                var flash_text = response.perform ? 'mastered skill' : 'still working on skill'
+                $("#form-flash").text(flash_text)
+            }
+            
             else
             $("#form-flash").text(response.comment + " is now saved")
         })
 
     }
 
-    //prevents form from submitting on enter
-    $('#new_accomplishment').submit(function(event) {
-       event.preventDefault();
-    });
-
     $("#accomplishment_perform").on("change", formValues);
 
     $("#accomplishment_comment").on("blur", formValues);
+
+     //prevents form from submitting on enter
+    $('#new_accomplishment').submit(function(event) {
+       event.preventDefault();
+    });
 
     $("#right-button").on("click", function(){
         var skill_id = parseInt($("#accomplishment_skill_id").val()) + 1
