@@ -19,10 +19,10 @@ function attachListeners(){
         posting.done((response)=>{
             if (this.type == "checkbox" ){
                 var flash_text = response.perform ? 'mastered skill' : 'still working on skill'
-                $("#form-flash").text(flash_text)
+                $("#ajax-notice").text(flash_text)
             }
             else
-            $("#form-flash").text(response.comment + " is now saved")
+            $("#ajax-notice").text(response.comment + " is now saved")
         })
     }
 
