@@ -35,15 +35,20 @@ function attachListeners(){
        event.preventDefault();
     });
 
-
     $('#new-child form').submit(function(event) {        
        event.preventDefault();
        var path = '/children'
        var child_demographics = $(this).serialize();
        var posting = $.post(path, child_demographics);
+
+       posting.done((response => {
+         $("#children-list").append(`<li> ${response.child_name} 
+            <a class="btn btn-info" href="/children/${response.id}">Child Profile</a>
+            <a class="btn btn-info" href="/children/${response.id}/edit">Edit Child</a>
+            <a class="btn btn-info" href="/children/${response.id}/skills">Skills</a>
+            </li>`)
+           }));
     });
-
-
 
     // Next and Back
     $("#right-button").on("click", function(){
@@ -57,8 +62,6 @@ function attachListeners(){
     //request for accomplishment with getJSON
     // $.getJSON("1").done(accomplishmentResponse)
 
-
-
 } // end listeners
 
 
@@ -68,7 +71,7 @@ function currentSkills(skillResponse){
 }
 
 
-function accomplishmentResponse(response){ // loads current data
+function accomplishmentResponse(response){ // loads current data of skill
     $("#explore-skills").text(response.skill.title)
 
     if (response.perform == true)
@@ -102,6 +105,7 @@ Accomplishment.prototype.displayRecentSkill = function() {
 //     return this.title + "-- Comment: --" + this.comment
 //   }
 // }
+
 
 function recentSkills(skillResponse){ //skillReaponse <- array of objects    
     var accomplishments = skillResponse.map(data => new Accomplishment(data.skill.title, data.comment))

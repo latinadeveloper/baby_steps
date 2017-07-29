@@ -1,13 +1,15 @@
 <h1>Your Children</h1>
 
-<% @children.each do |child| %>
-  <%= child.child_name %>
-  <%= link_to "Child Profile", child_path(child), class: 'btn btn-info' %>
-  <%= link_to "Edit Child", edit_child_path(child), class: 'btn btn-info' %>
-  <%= link_to "Skills", child_skills_path(child), class: 'btn btn-info' %>
-  <br>
-
-<% end %>
+<ul id='children-list'>
+  <% @children.each do |child| %>
+    <li>
+      <%= child.child_name %>
+      <%= link_to "Child Profile", child_path(child), class: 'btn btn-info' %>
+      <%= link_to "Edit Child", edit_child_path(child), class: 'btn btn-info' %>
+      <%= link_to "Skills", child_skills_path(child), class: 'btn btn-info' %>
+    </li>
+  <% end %>
+</ul>
 <br>
 
 <div id="new-child">
