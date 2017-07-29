@@ -16,11 +16,8 @@ class ChildrenController < ApplicationController
 
   def create
     @child = current_user.children.new(child_params)
-    if @child.save
-      redirect_to children_path
-    else
-      render 'new'
-    end
+    @child.save
+    render json: @child  
   end
 
   def update

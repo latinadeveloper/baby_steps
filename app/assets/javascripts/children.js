@@ -35,8 +35,12 @@ function attachListeners(){
        event.preventDefault();
     });
 
-    $('#new-child form').submit(function(event) {
+
+    $('#new-child form').submit(function(event) {        
        event.preventDefault();
+       var path = '/children'
+       var child_demographics = $(this).serialize();
+       var posting = $.post(path, child_demographics);
     });
 
 
