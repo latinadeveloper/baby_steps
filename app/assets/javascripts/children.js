@@ -45,7 +45,7 @@ function attachListeners(){
         $.getJSON(skill_id).done(accomplishmentResponse)
     })
     //request for accomplishment with getJSON
-    $.getJSON("1").done(accomplishmentResponse)
+    // $.getJSON("1").done(accomplishmentResponse)
 
 } // end listeners
 

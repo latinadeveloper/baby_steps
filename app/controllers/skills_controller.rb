@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   before_action :set_child
 
   def new
-    @accomplishment = Accomplishment.new
+    @accomplishment = @child.accomplishments.find_or_initialize_by(skill_id: '1')
   end
 
   def index
