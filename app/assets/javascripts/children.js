@@ -36,7 +36,7 @@ function attachListeners(){
     });
 
     $('#new-child form').submit(function(event) {        
-       event.preventDefault();
+    //    event.preventDefault();
        var path = '/children'
        var child_demographics = $(this).serialize();
        var posting = $.post(path, child_demographics);
@@ -47,7 +47,10 @@ function attachListeners(){
             <a class="btn btn-info" href="/children/${response.id}/edit">Edit Child</a>
             <a class="btn btn-info" href="/children/${response.id}/skills">Skills</a>
             </li>`)
+        $("#new-child input[type!=submit]").val("");
+
            }));
+        return false // allows multiple children to be added, have to disable preventdafault
     });
 
     // Next and Back
