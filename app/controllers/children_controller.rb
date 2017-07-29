@@ -3,11 +3,12 @@ class ChildrenController < ApplicationController
 
   def index
     @children = current_user.children
-  end
-
-  def new
     @child = Child.new
   end
+
+  # def new
+  #   @child = Child.new
+  # end
 
   def show
     @skills = @child.skills

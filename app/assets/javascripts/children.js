@@ -12,7 +12,7 @@ function attachListeners(){
         $.getJSON(window.location.pathname +'/skills/recent').done(recentSkills)             
     });
 
-    function formValues(){
+    function formValues(){ //updates accomplishments
         var values = $("#new_accomplishment").serialize();
         var posting = $.post('.', values);
 
@@ -35,6 +35,12 @@ function attachListeners(){
        event.preventDefault();
     });
 
+    $('#new-child form').submit(function(event) {
+       event.preventDefault();
+    });
+
+
+
     // Next and Back
     $("#right-button").on("click", function(){
         var skill_id = parseInt($("#accomplishment_skill_id").val()) + 1
@@ -46,6 +52,8 @@ function attachListeners(){
     })
     //request for accomplishment with getJSON
     // $.getJSON("1").done(accomplishmentResponse)
+
+
 
 } // end listeners
 
@@ -97,3 +105,5 @@ function recentSkills(skillResponse){ //skillReaponse <- array of objects
     
     $("#recent5Skills").html(skillData)
 }
+
+

@@ -1,7 +1,5 @@
 <h1>Your Children</h1>
 
-<%= link_to "Add Child", new_child_path, class: 'btn btn-info' %> <br><br>
-
 <% @children.each do |child| %>
   <%= child.child_name %>
   <%= link_to "Child Profile", child_path(child), class: 'btn btn-info' %>
@@ -10,3 +8,9 @@
   <br>
 
 <% end %>
+<br>
+
+<div id="new-child">
+  <h3>New Child</h3>
+  <%= render 'form', child: @child %>
+</div>
