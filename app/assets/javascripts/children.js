@@ -5,11 +5,22 @@ $(function () {
 function attachListeners(){
     $("button#current-skill").on("click", function() {
         // $.get('skills/current.json')
-        $.getJSON(window.location.pathname +'/skills/current').done(currentSkills)             
+        $.getJSON(window.location.pathname +'/skills/current')
+         .done(function(skillResponse){
+             var skillData = "<h3>Current Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");
+             $("#currentSkillsData").html(skillData)
+         })           
     });
 
+
     $("button#recent-skill").on("click", function() {
-        $.getJSON(window.location.pathname +'/skills/recent').done(recentSkills)             
+        $.getJSON(window.location.pathname +'/skills/recent')
+        .done(function (skillResponse){ //skillReaponse <- array of objects    
+            var accomplishments = skillResponse.map(data => new Accomplishment(data.skill.title, data.comment))
+            var skillData = "<h3>Recent Skills</h3>" + accomplishments.map(acc => `<br>${acc.displayRecentSkill()}`).join("");  
+    
+            $("#recent5Skills").html(skillData)
+        });
     });
 
     function formValues(){ //updates accomplishments
@@ -67,13 +78,6 @@ function attachListeners(){
 
 } // end listeners
 
-
-function currentSkills(skillResponse){
-    var skillData = "<h3>Current Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");
-    $("#currentSkillsData").html(skillData)
-}
-
-
 function accomplishmentResponse(response){ // loads current data of skill
     $("#explore-skills").text(response.skill.title)
 
@@ -110,11 +114,5 @@ Accomplishment.prototype.displayRecentSkill = function() {
 // }
 
 
-function recentSkills(skillResponse){ //skillReaponse <- array of objects    
-    var accomplishments = skillResponse.map(data => new Accomplishment(data.skill.title, data.comment))
-    var skillData = "<h3>Recent Skills</h3>" + accomplishments.map(acc => `<br>${acc.displayRecentSkill()}`).join("");  
-    
-    $("#recent5Skills").html(skillData)
-}
 
 
