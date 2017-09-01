@@ -34,7 +34,8 @@ function attachListeners(){
             }
             else
             $("#ajax-notice").text(response.comment + " is now saved")
-        })
+        });
+
     }
 
     $("#accomplishment_perform").on("change", formValues);//the checkbox
@@ -53,10 +54,11 @@ function attachListeners(){
        var posting = $.post(path, child_demographics);
 
        posting.done((response => {
-         $("#children-list").append(`<li> ${response.child_name} 
+         $("#children-list").append(`<l.i> ${response.child_name} 
             <a class="btn btn-info" href="/children/${response.id}">Child Profile</a>
             <a class="btn btn-info" href="/children/${response.id}/edit">Edit Child</a>
             <a class="btn btn-info" href="/children/${response.id}/skills">Skills</a>
+            <a class="btn btn-info delete" href="/children/${response.id}">Delete</a>
             </li>`)
         $("#new-child input[type!=submit]").val("");
 
@@ -75,6 +77,19 @@ function attachListeners(){
     })
     //request for accomplishment with getJSON
     // $.getJSON("1").done(accomplishmentResponse)
+
+
+    $("#children-list").on("click", '.delete', function(event) {
+        event.preventDefault();
+        $.ajax({
+            method: "DELETE",
+            url: this.href            
+        })
+        .done(function() {
+            alert( "Child deleted "  );
+        });
+        this.parentElement.remove()
+    })
 
 } // end listeners
 
