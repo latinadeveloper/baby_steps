@@ -5,9 +5,9 @@ $(function () {
 function attachListeners(){
     $("button#current-skill").on("click", function() {
         // $.get('skills/current.json')
-        $.getJSON(window.location.pathname +'/skills/current')
+        $.getJSON(window.location.pathname +'/skills/current') //children/34
          .done(function(skillResponse){
-             var skillData = "<h3>Current Skills</h3>" + skillResponse.map(data => `<br>${data["title"]}`).join("");
+             var skillData = "<h3>Current Skills</h3> Child's age: " + skillResponse.age + skillResponse.skills.map(data => `<br>${data["title"]}`).join("");
              $("#currentSkillsData").html(skillData)
          })           
     });
@@ -64,7 +64,7 @@ function attachListeners(){
         return false // allows multiple children to be added, have to disable preventdafault
     });
 
-    // Next and Back
+    // Next and Back  <== ==>
     $("#right-button").on("click", function(){
         var skill_id = parseInt($("#accomplishment_skill_id").val()) + 1
         $.getJSON(skill_id).done(accomplishmentResponse)
@@ -92,7 +92,7 @@ function accomplishmentResponse(response){ // loads current data of skill
 
 }
 
-//ES5 class
+//ES5 class for Accomplishment
 function Accomplishment(title, comment){
     this.title = title;
     this.comment = comment;

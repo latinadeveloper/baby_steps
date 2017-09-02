@@ -35,7 +35,7 @@ class SkillsController < ApplicationController
   end
 
   def current    
-     render json: @child.skills    
+     render json: @child  
   end
 
   # def recent
