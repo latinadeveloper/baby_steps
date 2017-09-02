@@ -3,7 +3,7 @@
 
 
   <%= form_for @accomplishment, url: child_skills_path(@child) do |f| %>
-    <h2 id="explore-skills"> <%= @accomplishment.skill.title %> </h2>
+    <h2 id="explore-skills"> title</h2>
     <%= f.hidden_field :skill_id %>
      skill completed? <%= f.check_box :perform %><br>
     <%= f.text_field :comment %> <br>
