@@ -27,7 +27,8 @@ class ChildrenController < ApplicationController
 
   def destroy
     @child.destroy
-     redirect_to children_path, notice: 'Child was deleted.'
+    render json: @child
+    #  redirect_to children_path, notice: 'Child was deleted.'
   end
 
   private

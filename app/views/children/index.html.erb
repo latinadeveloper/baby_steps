@@ -7,6 +7,7 @@
       <%= link_to "Child Profile", child_path(child), class: 'btn btn-info' %>
       <%= link_to "Edit Child", edit_child_path(child), class: 'btn btn-info' %>
       <%= link_to "Skills", child_skills_path(child), class: 'btn btn-info' %>
+      <%= link_to "Delete", child_path(child), class: 'btn btn-info delete' %>
     </li>
   <% end %>
 </ul>
